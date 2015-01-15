@@ -1,0 +1,11 @@
+---
+
+# Install
+- include: get_info.yml
+- include: install.yml
+
+# Upgrade
+- include: get_info.yml
+  when: "{{vagrant_upgrade}}"
+- include: upgrade.yml
+  when: "{{vagrant_upgrade}}"
