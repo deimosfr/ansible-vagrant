@@ -5,7 +5,7 @@
   shell: "vagrant version | awk '/^Latest/{print $3}'"
   register: vagrant_latest_version
   changed_when: false
-  when: vagrant_installed.stat.exists == True and vagrant_upgrade
+  when: vagrant_installed.stat.exists == True
   tags: vagrant
 
 - name: Download latest Vagrant version
@@ -13,12 +13,12 @@
            dest=/var/cache/apt/archives/vagrant_{{ vagrant_latest_version.stdout }}_{{ vagrant_arch }}.deb
   when: >
     vagrant_installed.stat.exists == False
-    or {{vagrant_upgrade}} == True and vagrant_current_version.stdout != vagrant_latest_version.stdout
+    or vagrant_current_version.stdout != vagrant_latest_version.stdout
   tags: vagrant
 
 - name: Install latest Vagrant version
   apt: deb=/var/cache/apt/archives/vagrant_{{ vagrant_latest_version.stdout }}_{{ vagrant_arch }}.deb state=installed
   when: >
     vagrant_installed.stat.exists == False
-    or {{vagrant_upgrade}} == True and vagrant_current_version.stdout != vagrant_latest_version.stdout
+    or vagrant_current_version.stdout != vagrant_latest_version.stdout
   tags: vagrant

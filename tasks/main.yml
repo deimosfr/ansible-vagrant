@@ -3,6 +3,7 @@
 # Install
 - include: get_info.yml
 - include: install.yml
+  when: "{{vagrant_upgrade}} == False"
 
 # Upgrade
 - include: get_info.yml
