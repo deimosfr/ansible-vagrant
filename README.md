@@ -17,7 +17,7 @@ them are as follows.
 
 ```
 # Install minimum version
-vagrant_version: "1.7.2"
+vagrant_version: "1.8.1"
 # Set arch
 vagrant_arch: "x86_64"
 # Upgrade to the latest version
