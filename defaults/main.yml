@@ -4,10 +4,10 @@
 vagrant_version: '1.8.1'
 
 # Set arch
-vagrant_arch: 'linux_amd64'
+vagrant_arch: 'x86_64'
 
 # Url download
-vagrant_http_src: "https://releases.hashicorp.com/vagrant/{{vagrant_version}}/vagrant_{{vagrant_version}}_{{vagrant_arch}}.zip"
+vagrant_http_src: "https://releases.hashicorp.com/vagrant/{{vagrant_version}}/vagrant_{{vagrant_version}}_{{vagrant_arch}}"
 
 # Upgrade to the latest version
 vagrant_upgrade: False
