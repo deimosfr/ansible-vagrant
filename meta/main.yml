@@ -11,6 +11,7 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - precise
-  categories:
-  - packaging
-  - system
+    galaxy_tags:
+    - packaging
+    - system
+dependencies: []
